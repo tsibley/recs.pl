@@ -2,10 +2,10 @@ RewriteEngine on
 
 # Humans get docs
 RewriteCond  %{HTTP_USER_AGENT} ^Mozilla
-RewriteRule ^/?$        https://metacpan.org/pod/recs [L]
+RewriteRule ^/?$        https://metacpan.org/pod/App::RecordStream [L]
 
 # Everything else gets source
 RewriteRule ^/?$        https://raw.githubusercontent.com/benbernard/RecordStream/master/recs [L]
 
 # Everyone gets these
-RewriteRule ^/?docs?$   https://metacpan.org/pod/recs [L]
+RewriteRule ^/?docs?$   https://metacpan.org/pod/App::RecordStream [L]
