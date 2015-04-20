@@ -1,11 +1,13 @@
 RewriteEngine on
 
-# Humans get docs
+# Humans get docs, everything else gets source
 RewriteCond  %{HTTP_USER_AGENT} ^Mozilla
 RewriteRule ^/?$        https://metacpan.org/pod/App::RecordStream [L]
-
-# Everything else gets source
 RewriteRule ^/?$        https://raw.githubusercontent.com/benbernard/RecordStream/master/recs [L]
+
+RewriteCond  %{HTTP_USER_AGENT} ^Mozilla
+RewriteRule ^/?bio$     https://metacpan.org/pod/App::RecordStream::Bio [L]
+RewriteRule ^/?bio$     https://raw.githubusercontent.com/tsibley/App-RecordStream-Bio/master/fatpack/bio.pm [L]
 
 # Everyone gets these
 RewriteRule ^/?docs?$   https://metacpan.org/pod/App::RecordStream [L]
